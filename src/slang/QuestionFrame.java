@@ -32,9 +32,9 @@ public class QuestionFrame extends JFrame implements ActionListener {
 		label.setAlignmentY(-100);
 		JLabel questionLabel;
 		if (type == 1)
-			questionLabel = new JLabel("Slang " + "`" + s[0] + "`" + " nghia la gi?");
+			questionLabel = new JLabel("Slang " + "`" + s[0] + "`" + " nghia là?");
 		else
-			questionLabel = new JLabel("`" + s[0] + "`" + " co slangword la gi?");
+			questionLabel = new JLabel("`" + s[0] + "`" + " có slang word là?");
 		questionLabel.setForeground(Color.black);
 		questionLabel.setFont(new Font("Gill Sans MT", Font.PLAIN, 18));
 		questionLabel.setAlignmentX(CENTER_ALIGNMENT);
@@ -83,7 +83,7 @@ public class QuestionFrame extends JFrame implements ActionListener {
 		con.add(panelCenter);
 		con.add(Box.createRigidArea(new Dimension(0, 50)));
 		con.add(buttonPane);
-		this.setTitle("Menu Window");
+		this.setTitle("Question Quiz");
 		this.setVisible(true);
 		this.setSize(700, 700);
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -111,8 +111,41 @@ public class QuestionFrame extends JFrame implements ActionListener {
 		if (s[ans].equals(s[5])) {
 			// default title and icon
 			JOptionPane.showMessageDialog(this, "Correct Answer.");
+
 		} else {
 			JOptionPane.showMessageDialog(this, "Wrong Answer", "Inane error", JOptionPane.ERROR_MESSAGE);
+			if (ans == 1)
+				b1.setBackground(Color.red);
+			else if (ans == 2)
+				b2.setBackground(Color.red);
+			else if (ans == 3)
+				b3.setBackground(Color.red);
+			else if (ans == 4)
+				b4.setBackground(Color.red);
+		}
+		if (s[1].equals(s[5])) {
+			b1.setEnabled(false);
+			b1.setBackground(Color.green);
+		} else {
+			b1.setEnabled(false);
+		}
+		if (s[2].equals(s[5])) {
+			b2.setEnabled(false);
+			b2.setBackground(Color.green);
+		} else {
+			b2.setEnabled(false);
+		}
+		if (s[3].equals(s[5])) {
+			b3.setEnabled(false);
+			b3.setBackground(Color.green);
+		} else {
+			b3.setEnabled(false);
+		}
+		if (s[4].equals(s[5])) {
+			b4.setEnabled(false);
+			b4.setBackground(Color.green);
+		} else {
+			b4.setEnabled(false);
 		}
 	}
 }
