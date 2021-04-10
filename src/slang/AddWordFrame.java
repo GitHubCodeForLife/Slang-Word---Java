@@ -125,22 +125,22 @@ public class AddWordFrame extends JFrame implements ActionListener {
 			if (slangWord.checkSlang(slag)) {
 				// Duplicate or Overwrite
 				Object[] options = { "Overwrite", "Duplicate" };
-				int n = JOptionPane.showOptionDialog(this, "Would you like some green eggs to go " + "with that ham?",
-						"A Silly Question", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
-						options, null);
+				int n = JOptionPane.showOptionDialog(this,
+						"Slang `" + slag + "` have already exist on  SlangWord  List", "A Silly Question",
+						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, null);
 				if (n == 0) {
 					// Overwrite
-					String s = slangWord.add(slag, meaning);
+					slangWord.addOverwrite(slag, meaning);
 					JOptionPane.showMessageDialog(this, "Overwrite Slang Word Success.");
 				} else if (n == 1) {
 					// Duplicate
-					// String s = slangWord.add(slag, meaning);
+					slangWord.addDuplicate(slag, meaning);
+					JOptionPane.showMessageDialog(this, "Dupilicate Slang Word Success.");
 				}
 			} else {
 				// Add new slag
-				String s = slangWord.add(slag, meaning);
+				slangWord.addNew(slag, meaning);
 				JOptionPane.showMessageDialog(this, "Adding new Slang Word Success.");
-
 			}
 			textFieldSlang.setText("");
 			textFieldMeaning.setText("");

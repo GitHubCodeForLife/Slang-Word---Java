@@ -28,7 +28,7 @@ public class HistoryFrame extends JFrame implements ActionListener {
 
 		// History
 		JLabel historyLabel = new JLabel();
-		historyLabel.setText("History");
+		historyLabel.setText("History Slagword Found");
 		historyLabel.setForeground(Color.green);
 		historyLabel.setFont(new Font("Gill Sans MT", Font.PLAIN, 35));
 		historyLabel.setAlignmentX(CENTER_ALIGNMENT);

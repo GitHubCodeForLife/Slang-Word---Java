@@ -25,6 +25,7 @@ public class ListSWFrame extends JFrame implements ActionListener, TableModelLis
 	JButton btnBack;
 	JTable jt;
 	SlangWord slangWord;
+	String dataCopy[][];
 
 	public ListSWFrame() throws Exception {
 		Container con = this.getContentPane();
@@ -51,6 +52,7 @@ public class ListSWFrame extends JFrame implements ActionListener, TableModelLis
 		JPanel panelTable = new JPanel();
 		panelTable.setBackground(Color.black);
 		String data[][] = slangWord.getData();
+		dataCopy = slangWord.getData();
 		String column[] = { "STT", "Slag", "Meaning" };
 		resultLabel.setText("We have " + data.length + " slang words");
 		jt = new JTable(data, column);
@@ -108,16 +110,15 @@ public class ListSWFrame extends JFrame implements ActionListener, TableModelLis
 		// TODO Auto-generated method stub
 		int row = jt.getSelectedRow();
 		int col = jt.getSelectedColumn();
+		if (row == -1 || col == -1)
+			return;
 		String Data = (String) jt.getValueAt(row, col);
-		System.out.println("Table element selected is: " + Data);
-//		if (col == 1) {
-//			// edit slag
-//			slangWord.set((String) jt.getValueAt(row, 1), (String) jt.getValueAt(row, 2));
-//			JOptionPane.showMessageDialog(this, "Addded a row.");
-//		}
+		// System.out.println("Table element selected is: " + Data);
+
 		if (col == 2) {
 			// edit meaning
-			slangWord.set((String) jt.getValueAt(row, 1), (String) jt.getValueAt(row, 2));
+			System.out.println("Old SlangWord: \t" + row + "\t" + dataCopy[row][2]);
+			slangWord.set((String) jt.getValueAt(row, 1), dataCopy[row][2], (String) jt.getValueAt(row, 2));
 			JOptionPane.showMessageDialog(this, "Updated a row.");
 		}
 	}

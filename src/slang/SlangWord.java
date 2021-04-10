@@ -10,8 +10,9 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class SlangWord {
-	private TreeMap<String, String> map = new TreeMap<String, String>();
+	private TreeMap<String, List<String>> map = new TreeMap<>();
 	private static SlangWord obj = new SlangWord();// Early, instance will be created at load time
+	private int sizeMap;
 
 	private SlangWord() {
 		try {
@@ -46,8 +47,10 @@ public class SlangWord {
 				Integer in = i + 1;
 				s[i][0] = in.toString();
 				s[i][1] = (String) keyArray[i];
-				s[i][2] = map.get(keyArray[i]);
-				stringBuilder.append(s[i][1] + "`" + s[i][2] + "\n");
+				List<String> meaning = map.get(keyArray[i]);
+				for (int j = 0; j < meaning.size(); j++) {
+					stringBuilder.append(s[i][1] + "`" + meaning.get(j) + "\n");
+				}
 			}
 			// System.out.println(stringBuilder.toString());
 			printWriter.write(stringBuilder.toString());
@@ -68,39 +71,71 @@ public class SlangWord {
 		String temp = scanner.next();
 		String[] part = temp.split("\n");
 		int i = 0;
+		int flag = 0;
+		sizeMap = 0;
 		while (scanner.hasNext()) {
+			List<String> meaning = new ArrayList<String>();
 			slag = part[1];
 			temp = scanner.next();
 			part = temp.split("\n");
 			System.out.println(slag + ' ' + part[0]);
-			map.put(slag, part[0]);
+			if (map.containsKey(slag)) {
+				meaning = map.get(slag);
+			}
+			meaning.add(part[0]);
+			map.put(slag, meaning);
 			i++;
+			sizeMap++;
 		}
-		System.out.println(i);
+		System.out.println(i + "\t" + sizeMap + "\t" + flag);
 		scanner.close();
 	}
 
 	public String[][] getData() {
-		String s[][] = new String[map.size()][3];
+		String s[][] = new String[sizeMap][3];
+		Set<String> slagListSet = map.keySet();
+		Object[] slagList = slagListSet.toArray();
 		int index = 0;
-		Set<String> keySet = map.keySet();
-		Object[] keyArray = keySet.toArray();
-		for (int i = 0; i < map.size(); i++) {
-			Integer in = i + 1;
-			s[i][0] = in.toString();
-			s[i][1] = (String) keyArray[i];
-			s[i][2] = map.get(keyArray[i]);
+		for (int i = 0; i < sizeMap; i++) {
+			s[i][0] = String.valueOf(i);
+			s[i][1] = (String) slagList[index];
+			List<String> meaning = map.get(slagList[index]);
+			s[i][2] = meaning.get(0);
+			System.out.println(s[i][0] + "\t" + s[i][1] + "\t" + s[i][2]);
+			for (int j = 1; j < meaning.size(); j++) {
+				if (i < sizeMap)
+					i++;
+				s[i][0] = String.valueOf(i);
+				s[i][1] = (String) slagList[index];
+				s[i][2] = meaning.get(j);
+				System.out.println(s[i][0] + "\t" + s[i][1] + "\t" + s[i][2]);
+			}
+			index++;
 		}
 		return s;
 	}
 
-	public String getMeaning(String key) {
-		return map.get(key);
+	public String[][] getMeaning(String key) {
+		List<String> listMeaning = map.get(key);
+		if (listMeaning == null)
+			return null;
+		int size = listMeaning.size();
+		String s[][] = new String[size][3];
+		for (int i = 0; i < size; i++) {
+			s[i][0] = String.valueOf(i);
+			s[i][1] = key;
+			s[i][2] = listMeaning.get(i);
+		}
+		return s;
 	}
 
-	public void set(String key, String value) {
-		map.put(key, value);
+	public void set(String slag, String oldValue, String newValue) {
+		System.out.println(oldValue + "\t" + newValue);
+		List<String> meaning = map.get(slag);
+		int index = meaning.indexOf(oldValue);
+		meaning.set(index, newValue);
 		this.saveFile("slangword.txt");
+		System.out.println("Size of map: " + sizeMap);
 	}
 
 	public void saveHistory(String slag) throws Exception {
@@ -135,29 +170,32 @@ public class SlangWord {
 		return s;
 	}
 
-	public String[][] findContain(String key) {
+	public String[][] findContain(String query) {
 		// Get all slang contain key
 		List<String> keyList = new ArrayList<>();
-		List<String> valueList = new ArrayList<>();
-		for (String keyAll : map.keySet()) {
-			if (keyAll.contains(key)) {
-				keyList.add(keyAll);
-				valueList.add(map.get(keyAll));
-				// System.out.println(keyAll + " " + map.get(keyAll));
+		List<String> meaningList = new ArrayList<>();
+		for (String keyIro : map.keySet()) {
+			if (keyIro.contains(query)) {
+				List<String> meaning = map.get(keyIro);
+				for (int i = 0; i < meaning.size(); i++) {
+					keyList.add(keyIro);
+					meaningList.add(meaning.get(i));
+				}
 			}
 		}
 		int size = keyList.size();
-		String s[][] = new String[size][2];
+		String s[][] = new String[size][3];
+
 		for (int i = 0; i < size; i++) {
-			s[i][0] = keyList.get(i);
-			s[i][1] = valueList.get(i);
+			s[i][0] = String.valueOf(i);
+			s[i][1] = keyList.get(i);
+			s[i][2] = meaningList.get(i);
 		}
 		return s;
 	}
 
 	public void reset() {
 		try {
-
 			readFile("slang-goc.txt");
 			this.saveFile("slangword.txt");
 		} catch (Exception e) {
@@ -166,17 +204,48 @@ public class SlangWord {
 		}
 	}
 
-	public void delete(String key) {
-		map.remove(key);
+	public void delete(String slag, String value) {
+		List<String> meaningList = map.get(slag);
+		int index = meaningList.indexOf(value);
+		if (meaningList.size() == 1) {
+			map.remove(slag);
+		} else {
+			meaningList.remove(index);
+			map.put(slag, meaningList);
+		}
+		sizeMap--;
 		this.saveFile("slangword.txt");
 	}
 
-	public String add(String key, String value) {
-		return map.put(key, value);
+	public void addNew(String slag, String meaning) {
+		List<String> meaningList = new ArrayList<>();
+		meaningList.add(meaning);
+		sizeMap++;
+		map.put(slag, meaningList);
+		this.saveFile("slang.txt");
+	}
+
+	public void addDuplicate(String slag, String meaning) {
+		List<String> meaningList = map.get(slag);
+		meaningList.add(meaning);
+		sizeMap++;
+		map.put(slag, meaningList);
+		this.saveFile("slangword.txt");
+	}
+
+	public void addOverwrite(String slag, String meaning) {
+		List<String> meaningList = map.get(slag);
+		meaningList.set(0, meaning);
+		map.put(slag, meaningList);
+		this.saveFile("slangword.txt");
 	}
 
 	public boolean checkSlang(String slag) {
-		return map.containsKey(slag);
+		for (String keyIro : map.keySet()) {
+			if (keyIro.equals(slag))
+				return true;
+		}
+		return false;
 	}
 
 	public String[] random() {
@@ -191,7 +260,7 @@ public class SlangWord {
 			// System.out.println(key);
 			if (index == rand) {
 				s[0] = key;
-				s[1] = map.get(key);
+				s[1] = map.get(key).get(0);
 				break;
 			}
 			index++;

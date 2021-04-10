@@ -131,7 +131,7 @@ public class DeleteFrame extends JFrame implements ActionListener, ListSelection
 		int n = JOptionPane.showConfirmDialog(this, "Would you like to delete this slang word?", "An Inane Question",
 				JOptionPane.YES_NO_OPTION);
 		if (n == 0) {
-			slangWord.delete(Data);
+			slangWord.delete(Data, (String) jt.getValueAt(row, 2));
 			// default title and icon
 			model.removeRow(row);
 			JOptionPane.showMessageDialog(this, "Deleted success");

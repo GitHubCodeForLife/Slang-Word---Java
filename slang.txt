@@ -665,7 +665,8 @@ BBALL`Basketball
 BBAM`Be Back After Meal
 BBB`Bugging Beyond Belief
 BBBW`Big Beautiful Black Woman
-BBC`British Broadcasting Corporation
+BBC`aaa
+BBC`aaaa2
 BBE`Babe
 BBEG`Big Bad Evil Guy
 BBFL`Best Buds For Life
@@ -2818,6 +2819,7 @@ HIV`Human Immunodeficiency Virus
 HIWTH`Hate It When That Happens
 HIYA`Hello
 HJNTIY`He's Just Not That Into You
+HK`bada
 HL`Half Life (game)
 HLAS`Hook, Line And Sinker
 HLV`Hasta La Vista

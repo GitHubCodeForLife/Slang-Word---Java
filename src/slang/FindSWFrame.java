@@ -33,6 +33,7 @@ public class FindSWFrame extends JFrame implements ActionListener, TableModelLis
 	JLabel titleLabel1;
 	DefaultTableModel model;
 	SlangWord slangword;
+	String[][] result;
 	final JOptionPane optionPane = new JOptionPane("The only way to close this dialog is by\n"
 			+ "pressing one of the following buttons.\n" + "Do you understand?", JOptionPane.QUESTION_MESSAGE,
 			JOptionPane.YES_NO_OPTION);
@@ -77,7 +78,6 @@ public class FindSWFrame extends JFrame implements ActionListener, TableModelLis
 		JPanel panelTable = new JPanel();
 		panelTable.setBackground(Color.black);
 
-//		String data[][] = {};
 		String column[] = { "STT", "Slag", "Meaning" };
 
 		jt = new JTable(new DefaultTableModel(column, 0));
@@ -139,37 +139,42 @@ public class FindSWFrame extends JFrame implements ActionListener, TableModelLis
 					JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, null);
 
 			if (n == 0) {
+				this.clearTable();
 				long startTime = System.currentTimeMillis();
-				String result = slangword.getMeaning(key);
+				String[][] temp = slangword.getMeaning(key);
 				long endTime = System.currentTimeMillis();
 				long timeElapsed = endTime - startTime;
-				if (result != null)
-					titleLabel1.setText(
-							"Execution time in milliseconds(1 Results ): " + String.valueOf(timeElapsed) + " ms");
-				else
+				if (temp != null)
+					titleLabel1.setText("Execution time in milliseconds(" + temp.length + " Results ): "
+							+ String.valueOf(timeElapsed) + " ms");
+				else {
 					titleLabel1.setText("Can't not find that slangWord");
-
-				// System.out.println(data[0] + data[1] + data[2]);
-				// Add Row
-				this.clearTable();
-				String ss[] = { "1", key, result };
-				model.addRow(ss);
+					return;
+				}
+				result = temp;
+				for (int i = 0; i < result.length; i++) {
+					String ss[] = result[i];
+					model.addRow(ss);
+				}
 
 			} else if (n == 1) {
 				this.clearTable();
-				// Find a list
 				long startTime = System.currentTimeMillis();
-				String[][] result = slangword.findContain(key);
-
-				int size = result.length;
-				for (int i = 0; i < size; i++) {
-					String ss[] = { String.valueOf(i + 1), result[i][0], result[i][1] };
-					model.addRow(ss);
-				}
+				String[][] temp = slangword.findContain(key);
 				long endTime = System.currentTimeMillis();
 				long timeElapsed = endTime - startTime;
-				titleLabel1.setText("Execution time in milliseconds(" + String.valueOf(size) + " Results ): "
-						+ String.valueOf(timeElapsed) + " ms");
+				if (temp != null)
+					titleLabel1.setText("Execution time in milliseconds(" + temp.length + " Results ): "
+							+ String.valueOf(timeElapsed) + " ms");
+				else {
+					titleLabel1.setText("Can't not find that slangWord");
+					return;
+				}
+				result = temp;
+				for (int i = 0; i < result.length; i++) {
+					String ss[] = result[i];
+					model.addRow(ss);
+				}
 			}
 			try {
 				slangword.saveHistory(key);
@@ -185,21 +190,15 @@ public class FindSWFrame extends JFrame implements ActionListener, TableModelLis
 
 	@Override
 	public void tableChanged(TableModelEvent e) {
-
 		int row = jt.getSelectedRow();
 		int col = jt.getSelectedColumn();
 		if (row == col && row == -1)
 			return;
 		String Data = (String) jt.getValueAt(row, col);
 		System.out.println("Table element selected is: " + row + col + " : " + Data);
-//		if (col == 1) {
-//			// edit slag
-//			slangword.set((String) jt.getValueAt(row, 1), (String) jt.getValueAt(row, 2));
-//			JOptionPane.showMessageDialog(this, "Addded a row.");
-//		}
 		if (col == 2) {
 			// edit meaning
-			slangword.set((String) jt.getValueAt(row, 1), (String) jt.getValueAt(row, 2));
+			slangword.set((String) jt.getValueAt(row, 1), result[row][2], (String) jt.getValueAt(row, 2));
 			JOptionPane.showMessageDialog(this, "Updated a row.");
 		}
 		jt.setFocusable(false);

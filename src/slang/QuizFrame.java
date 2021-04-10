@@ -35,7 +35,7 @@ public class QuizFrame extends JFrame implements ActionListener {
 
 		panelCenter.setLayout(new GridLayout(1, 2, 10, 10));
 		panelCenter.add(b1);
-		b2 = new JButton("2. Fing Meaning");
+		b2 = new JButton("2. Find Meaning");
 		b2.addActionListener(this);
 		b2.setFont(new Font("Gill Sans MT", Font.PLAIN, 18));
 		panelCenter.add(b2);
