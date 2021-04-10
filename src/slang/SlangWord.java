@@ -13,10 +13,18 @@ public class SlangWord {
 	private TreeMap<String, List<String>> map = new TreeMap<>();
 	private static SlangWord obj = new SlangWord();// Early, instance will be created at load time
 	private int sizeMap;
+	private String FILE_SLANGWORD = "slangword.txt";
+	private String FILE_ORIGINAL_SLANGWORD = "slangword-goc.txt";
+	private String FILE_HISTORY = "history.txt";
 
 	private SlangWord() {
 		try {
-			readFile("slangword.txt");
+			String current = new java.io.File(".").getCanonicalPath();
+			System.out.println("Current dir:" + current);
+			FILE_SLANGWORD = current + "\\" + FILE_SLANGWORD;
+			FILE_ORIGINAL_SLANGWORD = current + "\\" + FILE_ORIGINAL_SLANGWORD;
+			FILE_HISTORY = current + "\\" + FILE_HISTORY;
+			readFile(FILE_SLANGWORD);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -134,13 +142,13 @@ public class SlangWord {
 		List<String> meaning = map.get(slag);
 		int index = meaning.indexOf(oldValue);
 		meaning.set(index, newValue);
-		this.saveFile("slangword.txt");
+		this.saveFile(FILE_SLANGWORD);
 		System.out.println("Size of map: " + sizeMap);
 	}
 
 	public void saveHistory(String slag) throws Exception {
 		// String file = "history.txt";
-		File file1 = new File("history.txt");
+		File file1 = new File(FILE_HISTORY);
 		FileWriter fr = new FileWriter(file1, true);
 		fr.write(slag + "\n");
 		fr.close();
@@ -150,7 +158,7 @@ public class SlangWord {
 
 		List<String> history = new ArrayList<>();
 		try {
-			Scanner scanner = new Scanner(new File("history.txt"));
+			Scanner scanner = new Scanner(new File(FILE_HISTORY));
 			scanner.useDelimiter("\n");
 			while (scanner.hasNext()) {
 				String temp = scanner.next();
@@ -196,8 +204,8 @@ public class SlangWord {
 
 	public void reset() {
 		try {
-			readFile("slang-goc.txt");
-			this.saveFile("slangword.txt");
+			readFile(FILE_ORIGINAL_SLANGWORD);
+			this.saveFile(FILE_SLANGWORD);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -214,7 +222,7 @@ public class SlangWord {
 			map.put(slag, meaningList);
 		}
 		sizeMap--;
-		this.saveFile("slangword.txt");
+		this.saveFile(FILE_SLANGWORD);
 	}
 
 	public void addNew(String slag, String meaning) {
@@ -222,7 +230,7 @@ public class SlangWord {
 		meaningList.add(meaning);
 		sizeMap++;
 		map.put(slag, meaningList);
-		this.saveFile("slang.txt");
+		this.saveFile(FILE_SLANGWORD);
 	}
 
 	public void addDuplicate(String slag, String meaning) {
@@ -230,14 +238,14 @@ public class SlangWord {
 		meaningList.add(meaning);
 		sizeMap++;
 		map.put(slag, meaningList);
-		this.saveFile("slangword.txt");
+		this.saveFile(FILE_SLANGWORD);
 	}
 
 	public void addOverwrite(String slag, String meaning) {
 		List<String> meaningList = map.get(slag);
 		meaningList.set(0, meaning);
 		map.put(slag, meaningList);
-		this.saveFile("slangword.txt");
+		this.saveFile(FILE_SLANGWORD);
 	}
 
 	public boolean checkSlang(String slag) {
