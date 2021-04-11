@@ -134,14 +134,14 @@ public class FindSWFrame extends JFrame implements ActionListener, TableModelLis
 						JOptionPane.ERROR_MESSAGE);
 				return;
 			}
-			Object[] options = { "Find Flow Slang Word", "Find Slang word have key" };
+			Object[] options = { "Find Flow Slang Word", "Find Slang Flow definition" };
 			int n = JOptionPane.showOptionDialog(this, "Choose mode " + "you want to excute?", "Choose mode find",
 					JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, null);
-
+			String[][] temp = null;
 			if (n == 0) {
 				this.clearTable();
 				long startTime = System.currentTimeMillis();
-				String[][] temp = slangword.getMeaning(key);
+				temp = slangword.getMeaning(key);
 				long endTime = System.currentTimeMillis();
 				long timeElapsed = endTime - startTime;
 				if (temp != null)
@@ -160,7 +160,7 @@ public class FindSWFrame extends JFrame implements ActionListener, TableModelLis
 			} else if (n == 1) {
 				this.clearTable();
 				long startTime = System.currentTimeMillis();
-				String[][] temp = slangword.findContain(key);
+				temp = slangword.findDefinition(key);
 				long endTime = System.currentTimeMillis();
 				long timeElapsed = endTime - startTime;
 				if (temp != null)
@@ -177,7 +177,8 @@ public class FindSWFrame extends JFrame implements ActionListener, TableModelLis
 				}
 			}
 			try {
-				slangword.saveHistory(key);
+				for (int ii = 0; ii < temp.length; ii++)
+					slangword.saveHistory(temp[ii][1], temp[ii][2]);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

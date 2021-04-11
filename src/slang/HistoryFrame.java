@@ -37,7 +37,7 @@ public class HistoryFrame extends JFrame implements ActionListener {
 		panelTable.setBackground(Color.black);
 
 		String data[][] = slangWord.readHistory();
-		String column[] = { "STT", "Slang Word Found" };
+		String column[] = { "STT", "Slang Word", "Definition" };
 		JTable jt = new JTable(data, column);
 		jt.setRowHeight(30);
 		DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();

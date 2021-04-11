@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
@@ -56,9 +58,11 @@ public class SlangWord {
 				s[i][0] = in.toString();
 				s[i][1] = (String) keyArray[i];
 				List<String> meaning = map.get(keyArray[i]);
-				for (int j = 0; j < meaning.size(); j++) {
-					stringBuilder.append(s[i][1] + "`" + meaning.get(j) + "\n");
+				stringBuilder.append(s[i][1] + "`" + meaning.get(0));
+				for (int j = 1; j < meaning.size(); j++) {
+					stringBuilder.append("|" + meaning.get(j));
 				}
+				stringBuilder.append("\n");
 			}
 			// System.out.println(stringBuilder.toString());
 			printWriter.write(stringBuilder.toString());
@@ -86,16 +90,24 @@ public class SlangWord {
 			slag = part[1];
 			temp = scanner.next();
 			part = temp.split("\n");
-			System.out.println(slag + ' ' + part[0]);
+
 			if (map.containsKey(slag)) {
 				meaning = map.get(slag);
 			}
-			meaning.add(part[0]);
+			if (part[0].contains("|")) {
+				System.out.println(part[0]);
+				String[] d = (part[0]).split("\\|");
+				for (int ii = 0; ii < d.length; ii++)
+					System.out.println(d[ii]);
+				Collections.addAll(meaning, d);
+				sizeMap += d.length - 1;
+			} else {
+				meaning.add(part[0]);
+			}
 			map.put(slag, meaning);
 			i++;
 			sizeMap++;
 		}
-		System.out.println(i + "\t" + sizeMap + "\t" + flag);
 		scanner.close();
 	}
 
@@ -146,51 +158,68 @@ public class SlangWord {
 		System.out.println("Size of map: " + sizeMap);
 	}
 
-	public void saveHistory(String slag) throws Exception {
+	public void saveHistory(String slag, String meaning) throws Exception {
 		// String file = "history.txt";
 		File file1 = new File(FILE_HISTORY);
 		FileWriter fr = new FileWriter(file1, true);
-		fr.write(slag + "\n");
+		fr.write(slag + "`" + meaning + "\n");
 		fr.close();
 	}
 
 	public String[][] readHistory() {
-
-		List<String> history = new ArrayList<>();
+		List<String> historySlag = new ArrayList<>();
+		List<String> historyDefinition = new ArrayList<>();
 		try {
 			Scanner scanner = new Scanner(new File(FILE_HISTORY));
-			scanner.useDelimiter("\n");
+			scanner.useDelimiter("`");
+			String temp = scanner.next();
+			String[] part = scanner.next().split("\n");
+			historySlag.add(temp);
+			historyDefinition.add(part[0]);
 			while (scanner.hasNext()) {
-				String temp = scanner.next();
-				history.add(temp);
+				temp = part[1];
+				part = scanner.next().split("\n");
+				historySlag.add(temp);
+				historyDefinition.add(part[0]);
 			}
 			scanner.close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		int size = history.size();
-		String s[][] = new String[size][2];
+		int size = historySlag.size();
+		String s[][] = new String[size][3];
 		for (int i = 0; i < size; i++) {
 			s[size - i - 1][0] = String.valueOf(size - i);
-			s[size - i - 1][1] = history.get(i);
+			s[size - i - 1][1] = historySlag.get(i);
+			s[size - i - 1][2] = historyDefinition.get(i);
 		}
 		return s;
 	}
 
-	public String[][] findContain(String query) {
+	public String[][] findDefinition(String query) {
 		// Get all slang contain key
 		List<String> keyList = new ArrayList<>();
 		List<String> meaningList = new ArrayList<>();
-		for (String keyIro : map.keySet()) {
-			if (keyIro.contains(query)) {
-				List<String> meaning = map.get(keyIro);
-				for (int i = 0; i < meaning.size(); i++) {
-					keyList.add(keyIro);
+		for (Entry<String, List<String>> entry : map.entrySet()) {
+			List<String> meaning = entry.getValue();
+			for (int i = 0; i < meaning.size(); i++) {
+				if (meaning.get(i).toLowerCase().contains(query.toLowerCase())) {
+					keyList.add(entry.getKey());
 					meaningList.add(meaning.get(i));
 				}
 			}
 		}
+
+//		for (String keyIro : map.keySet()) {
+//			if (keyIro.contains(query)) {
+//				List<String> meaning = map.get(keyIro);
+//				for (int i = 0; i < meaning.size(); i++) {
+//					keyList.add(keyIro);
+//					meaningList.add(meaning.get(i));
+//				}
+//			}
+//		}
 		int size = keyList.size();
 		String s[][] = new String[size][3];
 

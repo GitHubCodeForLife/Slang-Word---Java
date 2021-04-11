@@ -564,8 +564,7 @@ AWKY`Awkward
 AWNP`All Work, No Play
 AWOL`Absent Without Leave
 AWP`Arctic Warfare Police sniper rifle
-AWS`As We Speak
-AWS`As We Speak
+AWS`As We Speak|As We Speak
 AWSM`Awesome
 AWW`Cute
 AX`Ask
@@ -1208,8 +1207,7 @@ CHEDDA`Cash| money
 CHEDDAR`Money
 CHEERIO`Goodbye
 CHEERS`Thanks| Goodbye
-CHEESE`Drug| starter heroin| Money
-CHEESE`Drug| starter heroin| Money
+CHEESE`Drug| starter heroin| Money|Drug| starter heroin| Money
 CHEESY`Corny| lame
 CHEEZ`Cheese
 CHELA`Beer
@@ -2176,8 +2174,7 @@ FL`Fake Laugh
 FLA`Florida
 FLAFF`Foot Loose And Fancy Free
 FLAG`Bandana
-FLAGGED`Banned
-FLAGGED`Banned
+FLAGGED`Banned|Banned
 FLAKE`Unreliable person
 FLAKE OUT`Cancel at the last minute
 FLAKY`Unreliable
@@ -2514,8 +2511,7 @@ GNR`Guns 'N Roses
 GNSD`Good Night, Sweet Dreams
 GNSTDLTBBB`Good Night Sleep Tight Don't Let the Bed Bugs Bite
 GNU`GNU's Not Unix| Linux OS
-GOAT`Greatest Of All Time
-GOAT`Greatest Of All Time
+GOAT`Greatest Of All Time|Greatest Of All Time
 GOB`Mouth
 GOBLIN`Gangster
 GOD SPEED`Good luck
@@ -2730,8 +2726,7 @@ HAYD`How Are You Doing?
 HAYT`How Are You Today?
 HAYWIRE`Crazy
 HAZE`Type of marijuana
-HB`Hug Back
-HB`Hurry Back
+HB`Hug Back|Hurry Back
 HBCU`Historically Black Colleges and Universities
 HBD`Happy Birthday
 HBK`Heart Break Kid
@@ -2792,8 +2787,7 @@ HGI`How Goes It?
 HGL`Happy Go Lucky
 HGTV`Home and Garden Television
 HGV`Heavy Goods Vehicle
-HH`Ha-Ha
-HH`Holding Hands
+HH`Ha-Ha|Holding Hands
 HHIS`Hanging Head In Shame
 HHOJ`Ha-Ha, Only Joking
 HHOK`Ha-Ha, Only Kidding
@@ -3459,10 +3453,8 @@ JFYI`Just For Your Information
 JG`Juicy Gossip
 JGB`Just Got Back
 JGH`Just Got Home
-JGI`Just Google It
-JGI`Just Google It
-JGL`Just Get Lost
-JGL`Just Get Lost
+JGI`Just Google It|Just Google It
+JGL`Just Get Lost|Just Get Lost
 JHC`Jesus H Christ
 JHEEZE`OMG| wow
 JHP`Jacketed Hollow Point (bullet)
@@ -4109,8 +4101,7 @@ MCL`Much Clown Love
 MCM`Man Crush Monday
 MCP`Male Chauvanist Pig
 MCR`My Chemical Romance (band)
-MD`Doctor of Medicine| Managing Director
-MD`Doctor of Medicine| Managing Director
+MD`Doctor of Medicine| Managing Director|Doctor of Medicine| Managing Director
 MDA`Drug related to Ecstasy (MDMA)
 MDF`Medium Density Fiberboard
 MDK`Murder Death Kill
@@ -4431,8 +4422,7 @@ NACKER`Irish gypsy| traveller
 NACKERED`Tired| worn out
 NADA`Nothing
 NADDA`Nothing
-NAE`No
-NAE`No
+NAE`No|No
 NAFF`Poor quality| uncool| Substitute swear word
 NAGL`Not A Good Look
 NAH`No
@@ -4991,8 +4981,7 @@ OTS`On The Side
 OTT`Over The Top
 OTTH`On The Third Hand
 OTTOMH`Off The Top Of My Head
-OTW`On The Way
-OTW`On The Whole
+OTW`On The Way|On The Whole
 OTY`Over To You
 OTZ`ORZ
 OU`Open University
@@ -5077,8 +5066,7 @@ PBP`Please Be Patient
 PBQ`Please Be Quiet
 PBR`Pabst Blue Ribbon (beer)
 PBS`Public Broadcasting Service
-PBUH`Peace Be Upon Him
-PBUH`Peace Be Upon Him
+PBUH`Peace Be Upon Him|Peace Be Upon Him
 PBWU`Peace Be With You
 PBWY`Peace Be With You
 PC`Politically Correct| Personal Computer
@@ -5399,10 +5387,8 @@ PWOS`Parents Watching Over Shoulder
 PWP`Plot? What Plot?
 PWT`Poor White Trash
 PX`Post Exchange| Part Exchange
-PYP`Play Your Position
-PYP`Play Your Position
-PYT`Pretty Young Thing
-PYT`Pretty Young Thing
+PYP`Play Your Position|Play Your Position
+PYT`Pretty Young Thing|Pretty Young Thing
 PZ`Peace
 Person wearing a hooded sweatshirt`Share with me
 Q`Thank You
@@ -6046,8 +6032,7 @@ SOTU`State of the Union
 SOUND`Cool| awesome| good
 SOUR`Strong WEED
 SOW`Female police officer
-SOWIE`Sorry
-SOWIE`Sorry
+SOWIE`Sorry|Sorry
 SOX`Socks
 SOY`Shame On You
 SOYW`Something On Your Wall
@@ -6370,8 +6355,7 @@ TEKKERS`Technique
 TELNET`Network Virtual Terminal Protocol
 TEMP`Temporary
 TEN`Person with a perfect body
-TEOTWAWKI`The End Of The World As We Know It
-TEOTWAWKI`The End Of The World As We Know It
+TEOTWAWKI`The End Of The World As We Know It|The End Of The World As We Know It
 TERRIBAD`Terrible and Bad, awful
 TEVS`Whatever
 TEXT`An SMS message sent between cell phones
@@ -7328,8 +7312,7 @@ WUWH`Wish You Were Here
 WUWT`What's Up With That
 WUWTA`What You Wanna Talk About?
 WUWTB`What You Wanna Talk 'Bout?
-WUWU`What's Up With You?
-WUWU`What's Up With You?
+WUWU`What's Up With You?|What's Up With You?
 WUZ`Was
 WW`White Widow| White Woman
 WW1`World War One
