@@ -1,6 +1,6 @@
 # Slang Word Java Using Swing and Java Collections
 
-- [1. Mô tả đồ chức năng đồ án](#1)
+- [1. Mô tả đồ chức năng đồ án](#1-mô-tả-đồ-chức-năng-đồ-án)
 - [2. Hướng dẵn chạy mã nguồn](#2-hướng-dẵn-chạy-mã-nguồn)
 - [Tham khảo](#tham-khảo)
 
