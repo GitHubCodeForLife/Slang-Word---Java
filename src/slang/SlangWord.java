@@ -87,10 +87,9 @@ public class SlangWord {
 		sizeMap = 0;
 		while (scanner.hasNext()) {
 			List<String> meaning = new ArrayList<String>();
-			slag = part[1];
+			slag = part[1].trim();
 			temp = scanner.next();
 			part = temp.split("\n");
-
 			if (map.containsKey(slag)) {
 				meaning = map.get(slag);
 			}
@@ -104,6 +103,7 @@ public class SlangWord {
 			} else {
 				meaning.add(part[0]);
 			}
+			// map.put(slag.trim(), meaning);
 			map.put(slag, meaning);
 			i++;
 			sizeMap++;
@@ -210,16 +210,6 @@ public class SlangWord {
 				}
 			}
 		}
-
-//		for (String keyIro : map.keySet()) {
-//			if (keyIro.contains(query)) {
-//				List<String> meaning = map.get(keyIro);
-//				for (int i = 0; i < meaning.size(); i++) {
-//					keyList.add(keyIro);
-//					meaningList.add(meaning.get(i));
-//				}
-//			}
-//		}
 		int size = keyList.size();
 		String s[][] = new String[size][3];
 

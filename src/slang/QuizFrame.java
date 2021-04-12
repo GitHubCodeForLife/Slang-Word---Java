@@ -28,14 +28,14 @@ public class QuizFrame extends JFrame implements ActionListener {
 		label.setAlignmentY(-100);
 		// Add space
 		// A Grid
-		b1 = new JButton("1. Find Slang");
+		b1 = new JButton("1. Find Definition");
 		b1.addActionListener(this);
 		b1.setFont(new Font("Gill Sans MT", Font.PLAIN, 18));
 		JPanel panelCenter = new JPanel();
 
 		panelCenter.setLayout(new GridLayout(1, 2, 10, 10));
 		panelCenter.add(b1);
-		b2 = new JButton("2. Find Meaning");
+		b2 = new JButton("2. Find SlangWord");
 		b2.addActionListener(this);
 		b2.setFont(new Font("Gill Sans MT", Font.PLAIN, 18));
 		panelCenter.add(b2);

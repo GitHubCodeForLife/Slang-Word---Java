@@ -146,8 +146,13 @@ public class MenuFrame extends JFrame implements ActionListener {
 				e1.printStackTrace();
 			}
 		} else if (e.getSource() == b7) {
-			slangWord.reset();
-			JOptionPane.showMessageDialog(this, "Reset success.");
+			// default icon, custom title
+			int n = JOptionPane.showConfirmDialog(this, "Do you really want to reset Slang Word?", "An Inane Question",
+					JOptionPane.YES_NO_OPTION);
+			if (n == 0) {
+				slangWord.reset();
+				JOptionPane.showMessageDialog(this, "Reset success.");
+			}
 		} else if (e.getSource() == b8) {
 			this.dispose();
 			new QuizFrame();

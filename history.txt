@@ -1677,3 +1677,30 @@ BBC`badaf
 BBC`British Broadcasting Corporation
 BBC`badaf
 BBC`British Broadcasting Corporation
+W00T`Hurrah
+WOOT`Hurrah
+^O^`Hurrah
+=.=`Tired
+HK`Hong Kong
+HK`Hostile Kids
+HK`Hong Kong
+HK` Hostile Kids
+.-.`Sad
+:(` sad
+:-(`Sad
+:<`Sad
+:C`Very Sad
+:[`Sad
+;;`Sad
+=[`Sad
+BLUE`Sad
+DBS` Don't Be Sad
+DITD` sad
+HSIT`How Sad Is That
+S&M`Sadism and Masochism
+SAP`Sad And Pathetic
+SMAD`Sad and mad
+TBSS`Too Bad, So Sad
+V.V`Sad
+HAR`Sarcastic laugh
+HAR`Sarcastic laugh 1

@@ -1,6 +1,4 @@
 Slag`Meaning
- HK`Hong Kong| Hostile Kids
- MCR`My Chemical Romance (band)
 #1`Number one
 $`Dollar| money
 $_$`Has money
@@ -591,7 +589,7 @@ AYT`Are You There?
 AYW`As You Wish
 AYYO`Hi, hello
 AZN`Asian
-Against Medical Advice`Ask Me Almost Anything
+Against Medical Advice`Ask Me Almost Anything
 B`Be
 B&`Banned| Band
 B&B`Bed & Breakfast
@@ -1075,7 +1073,7 @@ BUZZED`Tipsy| slightly drunk
 BV`Bad Vibe
 BVB`Black Veil Brides (band)
 BVM`Blessed Virgin Mary
-BW `Beautiful Woman| Black and White
+BW`Beautiful Woman| Black and White
 BWC`But Who Cares?
 BWDIK`But What Do I Know?
 BWG`Big Wide Grin
@@ -1483,7 +1481,7 @@ CYOOT`Cute
 CYPH`To Share A Smoke
 CYT`See You Tomorrow
 CZ`Condition Zero (game)
-Cam for Cam`Very happy
+Cam for Cam`Very happy
 D BO`Steal
 D&D`Dungeons and Dragons
 D&M`Deep and Meaningful
@@ -2707,7 +2705,7 @@ HANG`Hang out| spend time with
 HANG UP`Inhibition| emotional difficulty
 HANL`Have A Nice Life
 HAPA`Mixed race
-HAR`Sarcastic laugh
+HAR`Sarcastic laugh 1
 HARD LINES`Bad luck
 HARF`Vomit| throw up
 HASH`Marijuana
@@ -2743,7 +2741,7 @@ HC`Holy Cow
 HCDAJFU`He Could Do A Job For Us
 HCIT`How Cool Is That?
 HCO`Hollister
-HD `High-Definition
+HD`High-Definition
 HDCP`High-bandwidth Digital Content Protection
 HDD`Hard Disk Drive
 HDF`Halt Die Fresse| Shut up
@@ -2812,6 +2810,7 @@ HIV`Human Immunodeficiency Virus
 HIWTH`Hate It When That Happens
 HIYA`Hello
 HJNTIY`He's Just Not That Into You
+HK`Hong Kong| Hostile Kids
 HL`Half Life (game)
 HLAS`Hook, Line And Sinker
 HLV`Hasta La Vista
@@ -2925,7 +2924,7 @@ HUH`Confused sound
 HUN`Honey
 HUNDO`Hundred dollars
 HUNDOS`Hundreds
-HUNNED `Hundred dollars
+HUNNED`Hundred dollars
 HUNNIT`Hundred dollars
 HUR`Here| Hair
 HURT`Ugly| unattractive
@@ -3388,7 +3387,7 @@ IYTT`If You Think That
 IYW`If You Want/Will
 IYWW`If You Were Wondering
 IZ`Is| it's
-Indicating hesitation`Herb| Marijuana
+Indicating hesitation`Herb| Marijuana
 J`Joking
 J CAT`mentally unstable person
 J DUB`Jehovah's Witness
@@ -4087,7 +4086,7 @@ MB`Megabyte
 MBA`Masters of Business Association| Married But Available
 MBD`My Bad Dudes
 MBF`My Best Friend
-MBFAM `My Brother From Another Mother
+MBFAM`My Brother From Another Mother
 MBM`Married Black Male
 MBN`Must Be Nice
 MBO`Must Be Off| Management Buy-Out
@@ -4100,7 +4099,7 @@ MCD`McDonald's
 MCL`Much Clown Love
 MCM`Man Crush Monday
 MCP`Male Chauvanist Pig
-MCR`My Chemical Romance (band)
+MCR`My Chemical Romance (band)|My Chemical Romance (band)
 MD`Doctor of Medicine| Managing Director|Doctor of Medicine| Managing Director
 MDA`Drug related to Ecstasy (MDMA)
 MDF`Medium Density Fiberboard
@@ -4369,7 +4368,7 @@ MUX`Multiplex
 MV`Music Video
 MVA`Motor Vehicle Accident
 MVP`Most Valuable Player
-MW2 `Modern Warfare 2 (game)
+MW2`Modern Warfare 2 (game)
 MW3`Modern Warfare 3 (game)
 MWA`Kiss
 MWAH`Kiss
@@ -4891,7 +4890,7 @@ ON9`Stupid| Online
 ONCO`Or Nearest Cash Offer
 ONE`One Love| goodbye
 ONE OFF`Happened Once
-ONG `OMG
+ONG`OMG
 ONION`Ounce of a drug
 ONL`Online
 ONM`Oh, Never Mind
@@ -5390,7 +5389,7 @@ PX`Post Exchange| Part Exchange
 PYP`Play Your Position|Play Your Position
 PYT`Pretty Young Thing|Pretty Young Thing
 PZ`Peace
-Person wearing a hooded sweatshirt`Share with me
+Person wearing a hooded sweatshirt`Share with me
 Q`Thank You
 Q&A`Question and Answer
 Q/A`Question and Answer
@@ -6170,7 +6169,7 @@ SVP`S'il Vous Plait| please
 SVS`Someone Very Special
 SVU`Special Victims Unit
 SW`So What?| Star Wars| Street Worker
-SWAGG `Style| coolness| confidence
+SWAGG`Style| coolness| confidence
 SWAGGA`Style or personality
 SWAGGER`A person's style
 SWAK`Sealed With A Kiss
@@ -6198,7 +6197,7 @@ SWIZZLE`Sweet
 SWK`Star Wars Kid
 SWM`Single White Male
 SWMBO`She Who Must Be Obeyed
-SWND `Sound
+SWND`Sound
 SWOG`Uncoolness| opposite of SWAGG
 SWOL`Well built| muscular
 SWOLE`Muscular| in good shape
@@ -6234,7 +6233,7 @@ SYT`See You Tomorrow| See You There
 SYTYCD`So You Think You Can Dance
 SYWISY`See You When I See You
 S^`What's Up
-Something really good`Very attractive woman
+Something really good`Very attractive woman
 T-T`Crying
 T.T`Crying
 T2M`Talk To Me
@@ -6401,7 +6400,7 @@ TGTBT`Too Good To Be True
 THA`The
 THABTO`Two Heads Are Better Than One
 THANG`Thing
-THANQ `Thank You
+THANQ`Thank You
 THANX`Thanks
 THAR`There
 THC`Tetrahydrocannabinol| active ingredient in marijuana
@@ -6419,7 +6418,7 @@ THOU`You
 THRASH`Thrash metal
 THREAD`Topic On A Message Board| Clothes
 THRU`Through
-THT `That
+THT`That
 THTH`To Hot to Handle
 THUG`Violent criminal| Person struggling to make something of their life
 THUMBNAIL`Small version of a picture
@@ -6760,7 +6759,7 @@ UAV`Urban Assault Vehicle
 UB2`You Be Too
 UB3R`Uber| very
 UBD`User Brain Damage
-UBER `Ultimate| best| above
+UBER`Ultimate| best| above
 UBRS`Upper Black Rock Spire
 UC&P`Up Close and Personal
 UCAP`Up Close and Personal
@@ -7037,7 +7036,7 @@ WBU`What About You?
 WBW`White Boy Wasted
 WBY`What about You?
 WC`Welcome| Water Closet| toilet
-WCB `Will Call Back
+WCB`Will Call Back
 WCD`What you Doing?
 WCG`World Cyber Games
 WCIS`What Can I Say
