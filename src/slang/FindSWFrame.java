@@ -90,6 +90,7 @@ public class FindSWFrame extends JFrame implements ActionListener, TableModelLis
 		jt.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
 		jt.getModel().addTableModelListener(this);
 		JScrollPane sp = new JScrollPane(jt);
+
 		panelTable.setLayout(new GridLayout(1, 1));
 		panelTable.add(sp);
 
